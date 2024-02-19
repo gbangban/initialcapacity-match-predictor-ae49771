@@ -5,7 +5,7 @@ WORKDIR /home/node
 RUN apt update && \
     apt upgrade -y && \
     apt install -y python3 python3.11-venv pip \
-    node \
+    nodejs npm \
     # Cypress reqs: https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 # COPY . .
