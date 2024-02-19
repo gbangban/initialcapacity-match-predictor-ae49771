@@ -1,10 +1,11 @@
 # FROM mcr.microsoft.com/devcontainers/universal:linux
 # FROM mcr.microsoft.com/devcontainers/javascript-node
-FROM ubuntu:latest 
-WORKDIR /home/ubuntu
+FROM python:latest 
+WORKDIR /home/python
 RUN apt update && \
     apt upgrade -y && \
-    apt install -y python python3 python3.11-venv pip \
+    apt install -y \ 
+    # python python3 python3.11-venv pip \
     nodejs npm \
     # Cypress reqs: https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
