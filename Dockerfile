@@ -8,8 +8,8 @@ RUN apt update && \
     # nodejs npm \
     # Cypress reqs: https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-# COPY . .
-# RUN chmod -R 775 .
+COPY . .
+RUN chmod -R 775 ./integration-tests/run
 ENV FOOTBALL_DATA_API_KEY="abcdef"
 RUN echo ${FOOTBALL_DATA_API_KEY}
 # RUN make install test
