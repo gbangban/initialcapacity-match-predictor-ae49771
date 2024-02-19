@@ -22,17 +22,17 @@ from matchpredictor.upcominggames.upcoming_games_api import upcoming_games_api
 
 
 def build_model_provider(training_data: List[Result]) -> ModelProvider:
-    print("===========  Slower models are commented out here ===============")
+    # print("===========  Slower models are commented out here ===============")
     return ModelProvider([
         Model("Home", HomePredictor()),
         Model("Points", train_results_predictor(training_data)),
-        Model("==Alphabet City==", AlphabetPredictor()),
-        # Model("Offense simulator (fast)", train_offense_predictor(training_data, 1_000)),
-        # Model("Offense simulator", train_offense_predictor(training_data, 10_000)),
-        # Model("Full simulator (fast)", train_offense_and_defense_predictor(training_data, 1_000)),
-        # Model("Full simulator", train_offense_and_defense_predictor(training_data, 10_000)),
+        Model("Offense simulator (fast)", train_offense_predictor(training_data, 1_000)),
+        Model("Offense simulator", train_offense_predictor(training_data, 10_000)),
+        Model("Full simulator (fast)", train_offense_and_defense_predictor(training_data, 1_000)),
+        Model("Full simulator", train_offense_and_defense_predictor(training_data, 10_000)),
         # The linear regression model uses scikit learn, so can cause issues on some machines
-        # Model("Linear regression", train_regression_predictor(training_data))
+        Model("Linear regression", train_regression_predictor(training_data)),
+        Model("Alphabetical", AlphabetPredictor()),
     ])
 
 

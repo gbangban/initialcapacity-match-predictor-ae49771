@@ -27,7 +27,6 @@ class TestModelsApi(TestCase):
         response = self.test_client.get('/models')
 
         self.assertEqual(response.status_code, 200)
-
         self.assertEqual(response.get_json(), {'models': [
             {"name": "Home", "predicts_in_progress": False},
             {"name": "Points", "predicts_in_progress": False},
@@ -35,5 +34,6 @@ class TestModelsApi(TestCase):
             {"name": "Offense simulator", "predicts_in_progress": True},
             {"name": "Full simulator (fast)", "predicts_in_progress": True},
             {"name": "Full simulator", "predicts_in_progress": True},
-            # {"name": "Linear regression", "predicts_in_progress": False},
+            {"name": "Linear regression", "predicts_in_progress": False},
+            {"name": "Alphabetical", "predicts_in_progress": False},
         ]})
