@@ -12,6 +12,6 @@ COPY . .
 RUN chmod -R 775 ./integration-tests/run
 ENV FOOTBALL_DATA_API_KEY="abcdef"
 RUN echo ${FOOTBALL_DATA_API_KEY}
-# RUN make install test
+RUN make install test
 EXPOSE 3010 5010 5020 5030
 CMD [ "bash" ]
