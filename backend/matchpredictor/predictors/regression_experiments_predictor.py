@@ -59,7 +59,7 @@ def build_model(results: List[Result]) -> Tuple[PoissonRegressor, OneHotEncoder]
     y = np.sign(home_goals - away_goals)
 
     model = LogisticRegression(
-        penalty="none", 
+        penalty="l2", 
         fit_intercept=True, 
         multi_class="ovr", 
         C=1, 
