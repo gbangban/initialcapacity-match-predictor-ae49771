@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "make backend/report",
+			"label": "Backend Report",
+			"problemMatcher": [
+				"$gcc"
+			]
+		}
+	]
+}

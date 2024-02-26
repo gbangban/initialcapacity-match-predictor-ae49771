@@ -1,12 +1,12 @@
-# FROM mcr.microsoft.com/devcontainers/universal:linux
-FROM mcr.microsoft.com/devcontainers/javascript-node
+FROM mcr.microsoft.com/devcontainers/universal:linux
+# FROM mcr.microsoft.com/devcontainers/javascript-node
 WORKDIR /home/node
 RUN apt update && \
     apt upgrade -y && \
     apt install -y \ 
-    python3 python3-venv pip \
-    # nodejs npm \
-    # Cypress reqs: https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies
+#     python3 python3-venv pip \
+#     # nodejs npm \
+#     # Cypress reqs: https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 COPY . .
 RUN chmod -R 775 ./integration-tests/run
